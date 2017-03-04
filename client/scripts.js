@@ -2,7 +2,7 @@ $(document).ready(function () {
     /*Calls function once page loaded to display tweets to page*/
     getData();
 
-    $('button').prop('disabled', true);
+    
 
     $("#createChirp").keypress(function () {
         $('button').prop('disabled', false);
@@ -11,6 +11,7 @@ $(document).ready(function () {
     $("#btn").click(function() {
         postData();
         $('input[type="text"]').val('');
+        $('button').prop('disabled', true);
     })
 
 function postData() {
