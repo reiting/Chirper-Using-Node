@@ -33,7 +33,7 @@ var server = http.createServer(function (req, res) {
                 console.log("Uh-oh, you had an error!");
             } else {
                 res.writeHead(200, {
-                    "Content-Type": "text/javascript"
+                    "Content-Type": "application/javascript"
                 });
                 res.write(data);
                 res.end();
@@ -88,14 +88,14 @@ var server = http.createServer(function (req, res) {
                         console.log(data);
                         //read the file, get the entire array and push the new chirp to it
                         var jsonData = JSON.parse(data.toString('utf-8').trim());
-
+                        //pushes new chirp to the array
                         jsonData.push(newChirp);
     
                         //make array JSON again
                         var finalChirp = JSON.stringify(jsonData);
                         //then write the new stuff to the file
                         fs.writeFile(filePath, finalChirp, 'utf-8', function(err) {
-                            var code = 200,
+                            var code = 201,
                                 header = {
                                     'Content-Type': 'application/json'
                                 };

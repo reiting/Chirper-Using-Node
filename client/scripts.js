@@ -1,17 +1,18 @@
 $(document).ready(function () {
     /*Calls function once page loaded to display tweets to page*/
     getData();
-
-    
-
+    //disable button on page load
+    $('button').prop('disabled', true);
+    //when input field has text in it, enable the button
     $("#createChirp").keypress(function () {
         $('button').prop('disabled', false);
     });
-
+    //on  button click, empty the input field and disable the button
     $("#btn").click(function() {
         postData();
         $('input[type="text"]').val('');
         $('button').prop('disabled', true);
+        alert("Hello");
     })
 
 function postData() {
@@ -31,7 +32,6 @@ function postData() {
     })
     .then(function(success){
         console.log("APPENDING");
-        
         $('<div class="results"></div>').text(newChirp.message).appendTo(
             $("#posts")
         

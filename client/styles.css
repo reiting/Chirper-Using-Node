@@ -7,3 +7,9 @@
     border: 2px solid blue;
     border-radius: 50%;
 }
+
+.results {
+   
+    border: 2px solid plum;
+    background-color: peachpuff; 
+}
